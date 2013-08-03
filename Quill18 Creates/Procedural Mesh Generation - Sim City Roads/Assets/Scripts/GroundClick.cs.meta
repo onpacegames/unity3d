@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 27b9c3223d5a6004c818d5150e04ff6b
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - roadPrefab: {fileID: 100000, guid: d23c6700a4f842841b4d70fb43c23ddb, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
