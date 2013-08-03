@@ -47,6 +47,7 @@
      <Compile Include="Assets\Scripts\ActivateOnTrigger.cs" />
      <Compile Include="Assets\Scripts\EnableCollisionAndChangeMaterial.cs" />
      <Compile Include="Assets\Scripts\LoadLevelOnTrigger.cs" />
+     <Compile Include="Assets\Scripts\MoveOnActivate.cs" />
      <Compile Include="Assets\Scripts\PickupDrop.cs" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>

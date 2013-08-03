@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BasicTower.cs">
+    <Files>
+      <File FileName="Assets\Scripts\PathThroughObjects.cs" Line="28" Column="39" />
+      <File FileName="Assets\Scripts\DetectClicksAndTouches.cs" Line="52" Column="52" />
+      <File FileName="Assets\Scripts\CreateTowerOnClick.cs" Line="19" Column="76" />
+      <File FileName="Assets\Scripts\BasicTower.cs" Line="12" Column="46" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

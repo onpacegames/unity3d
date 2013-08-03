@@ -47,6 +47,7 @@
      <Compile Include="Assets\Scripts\ActivateOnTrigger.cs" />
      <Compile Include="Assets\Scripts\EnableCollisionAndChangeMaterial.cs" />
      <Compile Include="Assets\Scripts\LoadLevelOnTrigger.cs" />
+     <Compile Include="Assets\Scripts\MoveOnActivate.cs" />
      <Compile Include="Assets\Scripts\PickupDrop.cs" />
   </ItemGroup>
   <ItemGroup>

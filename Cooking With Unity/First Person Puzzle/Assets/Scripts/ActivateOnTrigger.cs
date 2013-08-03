@@ -3,8 +3,6 @@ using System.Collections;
 
 public class ActivateOnTrigger : MonoBehaviour {
 	
-	public GameObject objectToActivate;
-	
 	// Use this for initialization
 	void Start() {
 	
@@ -16,14 +14,18 @@ public class ActivateOnTrigger : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider other) {
-		if (other.renderer.material.color == renderer.material.color) {
-			objectToActivate.SendMessage("ObjectActivate");
+		if (other.tag == tag) {
+			foreach (GameObject obj in GameObject.FindGameObjectsWithTag(tag)) {
+				obj.SendMessage("ObjectActivate", SendMessageOptions.DontRequireReceiver);
+			}
 		}
 	}
 	
 	void OnTriggerExit(Collider other) {
-		if (other.renderer.material.color == renderer.material.color) {
-			objectToActivate.SendMessage("ObjectDeactivate");
+		if (other.tag == tag) {
+			foreach (GameObject obj in GameObject.FindGameObjectsWithTag(tag)) {
+				obj.SendMessage("ObjectDeactivate", SendMessageOptions.DontRequireReceiver);
+			}
 		}
 	}
 }

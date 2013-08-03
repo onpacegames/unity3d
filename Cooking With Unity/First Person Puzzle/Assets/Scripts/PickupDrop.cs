@@ -8,6 +8,8 @@ public class PickupDrop : MonoBehaviour {
 	
 	private bool isHoldingSomething = false;
 	private GameObject heldObject;
+	
+	public LayerMask pickupMask;
 
 	// Use this for initialization
 	void Start() {
@@ -21,22 +23,20 @@ public class PickupDrop : MonoBehaviour {
 			
 			RaycastHit hitInfo;
 			// TODO necessary to say "out" here?
-			if (Physics.Raycast(transform.position, transform.forward, out hitInfo, pickupDistance)) {
+			if (Physics.Raycast(transform.position, transform.forward, out hitInfo, pickupDistance, pickupMask)) {
 //				Debug.Log("Looking at " + hitInfo.collider);
 				// TODO hardcoded mouse buttons
 				if (Input.GetMouseButtonDown(0)) {
-					if (hitInfo.collider.tag == "Interactive") {
-						hitInfo.collider.transform.parent = transform.parent;
-						hitInfo.collider.rigidbody.isKinematic = true;
-						
+					hitInfo.collider.transform.parent = transform.parent;
+					hitInfo.collider.rigidbody.isKinematic = true;
+					
 //						Vector3 newPosition = transform.position;
 //						newPosition += transform.forward * holdDistance;
 //						hitInfo.collider.transform.position = newPosition;
-						
-						heldObject = hitInfo.collider.gameObject;
-						
-						isHoldingSomething = true;
-					}
+					
+					heldObject = hitInfo.collider.gameObject;
+					
+					isHoldingSomething = true;
 				}
 			}
 		} else {
