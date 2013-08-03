@@ -44,6 +44,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BasicEnemy.cs" />
      <Compile Include="Assets\Scripts\BasicTower.cs" />
      <Compile Include="Assets\Scripts\CreateTowerOnClick.cs" />
      <Compile Include="Assets\Scripts\DetectClicksAndTouches.cs" />

@@ -6,6 +6,7 @@ public class BasicTower : MonoBehaviour {
 	public GameObject bullet;
 	public float bulletSpeed = 1.0f;
 	public float fireRate = 1.0f;
+	public float fireRadius = 5.0f;
 	
 	// Use this for initialization
 	void Start() {
@@ -18,9 +19,18 @@ public class BasicTower : MonoBehaviour {
 	}
 	
 	void SpawnBullet() {
-		GameObject[] targets = GameObject.FindGameObjectsWithTag("Enemy");
+		GameObject target = null;
+		foreach (Collider col in Physics.OverlapSphere(transform.position, fireRadius)) {
+			if (col.tag == "Enemy") {
+				target = col.gameObject;
+				break;
+			}
+		}
 		
-		GameObject newBullet = Instantiate(bullet, transform.position, bullet.transform.rotation) as GameObject;
-		newBullet.rigidbody.AddForce((targets[0].transform.position - transform.position).normalized * bulletSpeed, ForceMode.VelocityChange);
+		if (target != null) {
+			// Check to see if our enemy is in range
+			GameObject newBullet = Instantiate(bullet, transform.position, bullet.transform.rotation) as GameObject;
+			newBullet.rigidbody.AddForce((target.transform.position - transform.position).normalized * bulletSpeed, ForceMode.VelocityChange);
+		}
 	}
 }

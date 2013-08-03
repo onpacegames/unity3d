@@ -1,11 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BasicTower.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PathThroughObjects.cs">
     <Files>
-      <File FileName="Assets\Scripts\PathThroughObjects.cs" Line="28" Column="39" />
-      <File FileName="Assets\Scripts\DetectClicksAndTouches.cs" Line="52" Column="52" />
-      <File FileName="Assets\Scripts\CreateTowerOnClick.cs" Line="19" Column="76" />
-      <File FileName="Assets\Scripts\BasicTower.cs" Line="12" Column="46" />
+      <File FileName="Assets\Scripts\PathThroughObjects.cs" Line="76" Column="5" />
+      <File FileName="Assets\Scripts\DetectClicksAndTouches.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CreateTowerOnClick.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BasicTower.cs" Line="34" Column="4" />
+      <File FileName="Assets\Editor\CreatePlane.cs" Line="24" Column="18" />
+      <File FileName="Assets\Scripts\BasicEnemy.cs" Line="4" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

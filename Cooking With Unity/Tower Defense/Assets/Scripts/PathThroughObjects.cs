@@ -10,9 +10,47 @@ public class PathThroughObjects : MonoBehaviour {
 	private int currentPathIndex = 0;
 	private Vector3 movementDirection;
 	
+	public GameObject graphicalPathObject;
+	
 	// Use this for initialization
 	void Start() {
 		movementDirection = (pathPoints[currentPathIndex].transform.position - transform.position).normalized;
+		
+		CreateGraphicalPathObjects();
+	}
+	
+	// TODO this is messy - clean up
+	void CreateGraphicalPathObjects() {
+		// Create object between transform.position and first waypoint
+		Vector3 pathObjectPosition = transform.position + ((pathPoints[0].transform.position - transform.position) * 0.5f);
+		
+		Quaternion pathObjectOrientation = Quaternion.LookRotation(pathPoints[0].transform.position - transform.position);
+		
+		GameObject pathObject = Instantiate(graphicalPathObject, pathObjectPosition, pathObjectOrientation) as GameObject;
+		
+		Vector3 newScale = Vector3.one;
+		newScale.z = (pathPoints[0].transform.position - transform.position).magnitude;
+		pathObject.transform.localScale = newScale;
+		
+		Vector2 newTextureScale = Vector2.one;
+		newTextureScale.y = (pathPoints[0].transform.position - transform.position).magnitude;
+		pathObject.renderer.material.mainTextureScale = newTextureScale;
+		
+		for (int i = 1; i < pathPoints.Length; i++) {
+			pathObjectPosition = pathPoints[i - 1].transform.position + ((pathPoints[i].transform.position - pathPoints[i - 1].transform.position) * 0.5f);
+		
+			pathObjectOrientation = Quaternion.LookRotation(pathPoints[i].transform.position - pathPoints[i - 1].transform.position);
+			
+			pathObject = Instantiate(graphicalPathObject, pathObjectPosition, pathObjectOrientation) as GameObject;
+			
+			newScale = Vector3.one;
+			newScale.z = (pathPoints[i].transform.position - pathPoints[i - 1].transform.position).magnitude;
+			pathObject.transform.localScale = newScale;
+			
+			newTextureScale = Vector2.one;
+			newTextureScale.y = (pathPoints[i].transform.position - pathPoints[i - 1].transform.position).magnitude;
+			pathObject.renderer.material.mainTextureScale = newTextureScale;
+		}
 	}
 	
 	// Update is called once per frame
@@ -27,8 +65,15 @@ public class PathThroughObjects : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject == pathPoints[currentPathIndex]) {
+			transform.position = pathPoints[currentPathIndex].transform.position;
 			currentPathIndex++;
-			movementDirection = (pathPoints[currentPathIndex].transform.position - transform.position).normalized;
+			
+			if (currentPathIndex >= pathPoints.Length) {
+				// TODO ADD LOGIC HERE TO DEDUCT HEALTH FROM PLAYER/BASE
+				Destroy(gameObject);
+			} else {
+				movementDirection = (pathPoints[currentPathIndex].transform.position - transform.position).normalized;
+			}
 		}
 	}
 }
