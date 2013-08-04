@@ -44,8 +44,57 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Resources\LibNoise\Generator\Billow.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Generator\Checker.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Generator\Const.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Generator\Cylinders.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Generator\Perlin.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Generator\RidgedMultifractal.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Generator\Spheres.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Generator\Voronoi.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Gradient.cs" />
+     <Compile Include="Assets\Resources\LibNoise\ModuleBase.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Noise2D.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Operator\Abs.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Operator\Add.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Operator\Blend.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Operator\Cache.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Operator\Clamp.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Operator\Curve.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Operator\Displace.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Operator\Exponent.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Operator\Invert.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Operator\Max.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Operator\Min.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Operator\Multiply.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Operator\Power.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Operator\Rotate.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Operator\Scale.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Operator\ScaleBias.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Operator\Select.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Operator\Subtract.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Operator\Terrace.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Operator\Translate.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Operator\Turbulence.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Properties\AssemblyInfo.cs" />
+     <Compile Include="Assets\Resources\LibNoise\Utils.cs" />
+     <Compile Include="Assets\Resources\Scripts\CameraFly.cs" />
+     <Compile Include="Assets\Resources\Scripts\Forestiy.cs" />
+     <Compile Include="Assets\Resources\Scripts\InitializePlanet.cs" />
+     <Compile Include="Assets\Resources\Scripts\ObjectPositioningTest.cs" />
+     <Compile Include="Assets\Resources\Scripts\QuadPlane.cs" />
+     <Compile Include="Assets\Resources\Scripts\ReconcilerTester.cs" />
+     <Compile Include="Assets\Resources\Scripts\TextureGenerator.cs" />
+     <Compile Include="Assets\Resources\Scripts\TextureScale.cs" />
      <Compile Include="Assets\Scripts\GroundClick.cs" />
      <Compile Include="Assets\Scripts\NodeClick.cs" />
+     <None Include="Assets\Resources\Shaders\DiffuseTex.shader" />
+     <None Include="Assets\Resources\Shaders\GroundFromSpace.shader" />
+     <None Include="Assets\Resources\Shaders\ReflectionTextured.shader" />
+     <None Include="Assets\Resources\Shaders\SkyFromSpace.shader" />
+     <None Include="Assets\Resources\Shaders\SkyFromAtmosphere.shader" />
+     <None Include="Assets\Resources\Shaders\TestMultiObjectTexture.shader" />
+     <None Include="Assets\Resources\Shaders\GroundFromAtmosphere.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
